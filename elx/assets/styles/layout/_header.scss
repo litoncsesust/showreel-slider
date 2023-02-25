@@ -1,0 +1,333 @@
+.header {
+  background-color: $header-footer-background;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  z-index: 99999;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-in-out;
+  #nav-icon {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 999999;
+    span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+    }
+
+    span:nth-child(1) {
+      top: 0px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+    }
+
+    span:nth-child(2) {
+      top: 10px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+      width: 50%;
+    }
+
+    span:nth-child(3) {
+      top: 20px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+    }
+
+    &.open {
+      span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: -3px;
+        left: 8px;
+      }
+
+      span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 18px;
+        left: 8px;
+      }
+    }
+    @include resp-max($breakpoint-md) {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+
+  .site-header-container {
+    width: 100%;
+    .row {
+      display: flex;
+      align-items: center;
+      .echologxy-sitelogo {
+        transition: all 0.25s ease-in-out;
+        a.custom-logo-link {
+          display: flex;
+          align-items: center;
+          transition: all 0.25s ease-in-out;
+          img {
+            transition: all 0.25s ease-in-out;
+            min-width: 200px;
+            max-width: 349px;
+          }
+        }
+        @include resp-max($breakpoint-md) {
+          max-width: 200px;
+        }
+      }
+      .echologxy-sitenav {
+        transition: all .25s ease-in;
+        ul {
+          width: 100%;
+          display: flex;
+          list-style: none;
+          justify-content: space-around;
+          align-items: center;
+          li {
+            max-width: 150px;
+            font-family: 'Karla';
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: all 0.25s ease-in-out;
+            a {
+              color: $base-background-colour;
+              text-decoration: none;
+              position: relative;
+              transition: all 0.25s ease-in-out;
+              &::after{
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                transition: width .15s ease-in-out;
+                background-color: $brand-colour;
+              }
+
+              &:hover{
+                &::after{
+                  width: 100%;
+                }
+              }
+            }
+
+            &.nav-contact-us {
+              max-width: 200px;
+              .button-filled {
+                text-decoration: none;
+                padding: 10px 30px;
+                background-color: $brand-colour;
+                font-size: 16px;
+                &::after{
+                  display: none;
+                }
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                &::after{
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        .site-nav {
+          transition: all 0.25s ease-in-out;
+        }
+
+        &.echologxy-sitenav-mobile {
+          display: none;
+          &.nav-active {
+            visibility: visible;
+            height: 100vh;
+            width: 100%;
+            transform: translate(0, 0) scale(1);
+            border-radius: 0;
+          }
+        }
+
+        @include resp-max($breakpoint-md) {
+          display: none;
+          &.echologxy-sitenav-mobile {
+            display: block;
+            position: fixed;
+            background-color: $header-footer-background;
+            visibility: hidden;
+            opacity: 0;
+            // height: 500px;
+            // width: 500px;
+            // border-radius: 50%;
+            // transform: translate(80%, -80%) scale(0.5);
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            right: 0;
+            z-index: 99999;
+            padding-left: 0;
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+            ul {
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              width: 100%;
+              height: 100vh;
+              margin: 0;
+              li {
+                margin-bottom: 15px;
+                transition: all 1s ease;
+                transition-delay: 300ms;
+                a {
+                  color: $brand-colour;
+                  position: relative;
+                  &.button-filled {
+                    background-color: transparent !important;
+                    padding: 0 !important;
+                    &::after{
+                      display: block !important;
+                    }
+                  }
+                }
+              }
+            }
+            &::before{
+              content: '';
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: -15px;
+              background: $brand-colour;
+              transform-origin: 0 0;
+              transform: skew(45deg) translateX(-245%);
+              transition: all .5s ease-in-out;
+            }
+            &.nav-active {
+              visibility: visible;
+              height: 100vh;
+              width: 100%;
+              opacity: 1;
+              transform: translate(0, 0) scale(1);
+              border-radius: 0;
+              z-index: 99999;
+              &::before{
+                transform: skew(45deg) translateX(85%);
+                @include resp-max($breakpoint-md) {
+                  transform: skew(45deg) translateX(80%);
+                }
+                @include resp-max($breakpoint-sm) {
+                  transform: skew(45deg) translateX(75%);
+                }
+                @include resp-max($breakpoint-xs) {
+                  transform: skew(45deg) translateX(70%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include resp-max($breakpoint-md) {
+    height: 70px;
+  }
+
+  &.scrolled-down {
+    height: 50px;
+    background-color: rgba(27, 27, 26, 0.93);
+    .echologxy-sitelogo {
+      transition: all 0.25s ease-in-out;
+      a.custom-logo-link {
+        img {
+          max-width: 200px !important;
+        }
+      }
+    }
+    .echologxy-sitenav {
+      margin-left: auto;
+      transform-origin: center right;
+      transform: scale(.8);
+      ul {
+        li {
+          // font-size: 14px !important;
+          &.nav-contact-us {
+            a {
+              padding: 5px 20px !important;
+            }
+          }
+        }
+      }
+      &.echologxy-sitenav-mobile {
+        transform: scale(1);
+      }
+    }
+    #nav-icon {
+      top: 13px !important;
+    }
+  }
+}
+
+// .logged-in.admin-bar {
+//   .header {
+//     #nav-icon {
+//       top: 55px;
+//       @include resp-max($breakpoint-sm) {
+//         top: 70px;
+//       }
+//     }
+//   }
+// }

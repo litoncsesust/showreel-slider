@@ -1,0 +1,112 @@
+<?php
+
+namespace SevenShores\Hubspot\Tests\Integration\Endpoints;
+
+use SevenShores\Hubspot\Endpoints\BlogAuthors;
+use SevenShores\Hubspot\Tests\Integration\Abstraction\EntityTestCase;
+
+/**
+ * @internal
+ * @coversNothing
+ */
+class BlogAuthorsTest extends EntityTestCase
+{
+    protected $endpointClass = BlogAuthors::class;
+
+    /** @test */
+    public function allWithNoParams()
+    {
+        $response = $this->endpoint->all();
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /** @test */
+    public function allWithParams()
+    {
+        $response = $this->endpoint->all([
+            'limit' => 2,
+            'offset' => 3,
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertLessThanOrEqual(2, count($response->objects));
+        $this->assertGreaterThanOrEqual(3, $response->offset);
+    }
+
+    /** @test */
+    public function searchWithoutQueryAndParams()
+    {
+        $response = $this->endpoint->search();
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /** @test */
+    public function searchWithQueryAndWithoutParams()
+    {
+        $response = $this->endpoint->search('john-smith');
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /** @test */
+    public function searchWithQueryAndParams()
+    {
+        $response = $this->endpoint->search('john-smith', [
+            'limit' => 5,
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertLessThanOrEqual(5, count($response->objects));
+    }
+
+    /** @test */
+    public function getById()
+    {
+        $response = $this->endpoint->getById($this->entity->id);
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /** @test */
+    public function create()
+    {
+        $this->assertEquals(201, $this->entity->getStatusCode());
+    }
+
+    /** @test */
+    public function update()
+    {
+        $response = $this->endpoint->update($this->entity->id, [
+            'bio' => 'Lorem ipsum dolor sit amet.',
+            'website' => 'http://example.com',
+        ]);
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /** @test */
+    public function delete()
+    {
+        $response = $this->endpoint->delete($this->entity->id);
+
+        $this->assertEquals(204, $response->getStatusCode());
+
+        $this->entity = null;
+    }
+
+    protected function createEntity()
+    {
+        return $this->endpoint->create([
+            'fullName' => 'John Smith '.uniqid(),
+            'email' => 'john.smith'.uniqid().'@example.com',
+            'username' => 'john-smith',
+        ]);
+    }
+
+    protected function deleteEntity()
+    {
+        $this->endpoint->delete($this->entity->id);
+    }
+}

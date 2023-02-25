@@ -1,0 +1,91 @@
+.site-landing-container {
+  .site-landing-top-sections {
+    padding-bottom: 85px;
+    background: linear-gradient(245deg, #531800 0%, #1d1d1b 49%);
+    .site-top-hero-section {
+      text-align: center;
+      position: relative;
+      span.section-bottom-line {
+        margin-top: 30px;
+        margin-bottom: 35px;
+      }
+      .hero-title-container {
+        background-position: 110%;
+        padding-top: 70px;
+        margin-bottom: 70px;
+
+        .hero-description {
+          span {
+            color: $brand-colour;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .hero-subtitle {
+        font-size: 28px;
+      }
+
+      .testing-tools-floating-container {
+        background: #fff;
+        width: 90%;
+        max-width: 1215px;
+        margin: 0 auto;
+        text-align: center;
+        color: #000000;
+        padding: 60px;
+        position: relative;
+        margin-bottom: -265px;
+        z-index: 9999;
+        box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.05);
+        .testing-tools-section-title {
+          font-size: 34px;
+          font-weight: 800;
+          @include resp-max($breakpoint-sm) {
+            font-size: 26px;
+            line-height: 30px;
+          }
+        }
+        .testing-tools-logos {
+          display: flex;
+          justify-content: center;
+          width: 65%;
+          margin: 10px auto;
+          .testing-tools-logo {
+            width: 50px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            img {
+              filter: grayscale(100%);
+            }
+            @include resp-max($breakpoint-sm) {
+              width: 35px;
+            }
+          }
+          @include resp-max($breakpoint-sm) {
+            flex-wrap: wrap;
+            width: 100%;
+          }
+        }
+        .button-stroked {
+          display: inline-block;
+          @include resp-max($breakpoint-sm) {
+            font-size: 13px;
+            padding: 10px 20px;
+          }
+        }
+        @include resp-max($breakpoint-sm) {
+          padding: 25px 20px;
+        }
+      }
+    }
+  }
+
+  .site-global-testimonial-section {
+    padding-top: 205px;
+    .testimonial-top-graphics {
+      display: none;
+    }
+  }
+  
+}

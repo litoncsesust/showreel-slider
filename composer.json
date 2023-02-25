@@ -1,0 +1,8 @@
+{
+    "name": "echologyx/echologyx",
+    "description": "Custom theme for echologyx",
+    "type": "project",
+    "require": {
+        "hubspot/api-client": "^4.0"
+    }
+}

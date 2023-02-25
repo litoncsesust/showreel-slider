@@ -1,0 +1,195 @@
+.site-servicespage-container {
+    .site-servicespage-top-sections {
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .hero-title-container {
+            max-width: 800px;
+            p.hero-subtitle {
+                font-size: 28px;
+                line-height: 40px;
+                margin-bottom: 40px;
+                @include resp-max($breakpoint-md) {
+                    font-size: 18px;
+                    line-height: 30px;
+                }
+                @include resp-max($breakpoint-sm) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        @include resp-max($breakpoint-md) {
+            height: 550px;
+        }
+
+        @include resp-max($breakpoint-sm) {
+            height: 450px;
+        }
+    }
+
+    .site-top-service-section {
+        .section-header {
+            margin-top: 30px;
+            margin-bottom: 0px;
+            .section-subtitle-dark {
+                color: #000000;
+            }
+            @include resp-max($breakpoint-md) {
+                margin-bottom: 0px;
+                margin-top: 30px;
+            }
+        }
+
+        .section-contents {
+            color: #000000;
+            overflow: hidden;
+            .services-row {
+                .service-row-item {
+                    display: flex;
+                    padding: 80px 0px 0px 0px;
+                    .row-icon {
+                        flex-basis: calc(100% / 12 * 5);
+                        display: flex;
+                        align-items: center;
+                        img {
+                            width: 100%;
+                            transition: all .5s ease-in-out;
+                            position: relative;
+                        }
+                    }
+                    .row-details {
+                        flex-basis: calc(100% / 12 * 7);
+                        padding-left: 90px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        h2.service-item-title {
+                            font-size: 34px;
+                            line-height: 45px;
+                            margin-bottom: 20px;
+                            a {
+                                color: #000000;
+                                text-decoration: none;
+                                transition: all 100ms ease-in-out;
+                                &:hover {
+                                    color: $brand-colour;
+                                }
+                            }
+                            @include resp-max($breakpoint-sm) {
+                                font-size: 26px;
+                                line-height: 35px;
+                                margin-bottom: 15px;
+                            }
+                        }
+                        
+                        p.service-item-paragraph {
+                            font-size: 18px;
+                            line-height: 30px;
+                            a.services-read-more {
+                                cursor: pointer;
+                                &:hover {
+                                    color: #000000;
+                                    text-decoration: none;
+                                }
+                            }
+                            @include resp-max($breakpoint-sm) {
+                                font-size: 16px;
+                                line-height: 25px;
+                            }
+                        }
+                        p.service-tools-title {
+                            color: #FA4B00;
+                            font-size: 18px;
+                            text-transform: uppercase;
+                            margin-bottom: 20px;
+                            @include resp-max($breakpoint-sm) {
+                                font-size: 16px;
+                                line-height: 25px;
+                            }
+                        }
+                        img.service-tools-image {
+                            width: 100%;
+                            max-width: 530px;
+                            object-fit: contain;
+                        }
+
+                        @include resp-max($breakpoint-md) {
+                            padding-left: 50px;
+                        }
+
+                        @include resp-max($breakpoint-sm) {
+                            padding: 0;
+                        }
+                    }
+
+
+                    &.row-orient-right {
+                        .row-icon {
+                            img {
+                                left: -75px !important;
+                                opacity: 0;
+                            }
+                        }
+                        &.scrolled {
+                            .row-icon {
+                                img {
+                                    left: 0 !important;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    &.row-orient-left {
+                        .row-icon {
+                            order: 2;
+                            img {
+                                right: -75px !important;
+                                opacity: 0;
+                            }
+                            @include resp-max($breakpoint-sm) {
+                                order: 1;
+                            }
+                        }
+                        .row-details {
+                            order: 1;
+                            padding-left: 0;
+                            padding-right: 90px;
+                            @include resp-max($breakpoint-md) {
+                                padding-right: 50px;
+                            }    
+                            @include resp-max($breakpoint-sm) {
+                                order: 2;
+                                padding: 0;
+                            }
+                        }
+
+                        &.scrolled {
+                            .row-icon {
+                                img {
+                                    right: 0 !important;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    @include resp-max($breakpoint-sm) {
+                        flex-direction: column;
+                        padding-top: 30px;
+                    }
+                }
+            }
+            padding-bottom: 30px;
+            @include resp-max($breakpoint-md) {
+                padding-bottom: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.have-query-section{
+  &>div {
+    padding-top: 0 !important;
+  }
+  background-color: #1B1B1A;
+  padding-top: 30px;
+  color:white;
+  text-align: center;
+  .query-subtitle{
+      font-family: Karla;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 30px;
+      padding: 20px 0px;
+  }
+
+  .query-chat-graphics {
+      margin-top: 45px;
+  }
+}

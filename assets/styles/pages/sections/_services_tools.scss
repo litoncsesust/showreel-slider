@@ -1,0 +1,54 @@
+.service-tools-floating-container {
+  background: #fff;
+  width: 90%;
+  max-width: 1215px;
+  margin: 0 auto;
+  text-align: center;
+  color: #000000;
+  padding: 60px 0;
+  position: relative;
+  z-index: 9999;
+  .service-tools-section-title {
+    font-size: 34px;
+    font-weight: 800;
+    @include resp-max($breakpoint-sm) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  .service-tools-title {
+    color: #fa4b00;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include resp-max($breakpoint-sm) {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+  .service-tools-logos {
+    margin-bottom: 10px;
+  }
+  .service-stroked {
+    display: inline-block;
+  }
+  .graphics-container {
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: -106px;
+    @include resp-max($breakpoint-md) {
+      width: 480px;
+      margin-bottom: -95px;
+    }
+    @include resp-max($breakpoint-sm) {
+      width: 300px;
+      margin-bottom: -81px;
+    }
+
+    @include resp-max($breakpoint-xs) {
+      width: 200px;
+      margin-bottom: -75px;
+    }
+  }
+}

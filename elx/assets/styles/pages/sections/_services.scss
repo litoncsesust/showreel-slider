@@ -1,0 +1,179 @@
+.site-top-service-section {
+  
+  .section-header {
+    margin-bottom: 110px;
+    @include resp-max($breakpoint-sm) {
+      margin-bottom: 65px;
+    }
+  }
+  .section-contents {
+    padding: 0 20px;
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .service-grid-item {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: calc(100% / 12 * 4 - 30px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        .service-item-link {
+          text-decoration: none;
+          color: #FFFFFF;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .grid-icon {
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: calc(100% / 12 * 3);
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 5px;
+          padding-right: 10px;
+          img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+          }
+          @include resp-max($breakpoint-md) {
+            padding-right: 0;
+          }
+        }
+
+        .grid-details {
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: calc(100% / 12 * 9);
+          .service-item-title {
+            font-size: 22px;
+            margin-bottom: 5px;
+            transition: all .25s ease-in-out;
+          }
+          .section-bottom-line {
+            display: block;
+            width: 47px;
+            border-bottom: 2px solid $brand-colour;
+            margin-bottom: 20px;
+            margin-left: 0;
+          }
+          .service-item-paragraph {
+            font-size: 16px;
+            span, b, strong {
+              font-weight: bold;
+              transition: all .25s ease-in-out;
+            }
+          }
+        }
+
+        @include resp-max($breakpoint-md) {
+          margin-bottom: 30px;
+          text-align: center;
+          flex-basis: calc(100% / 12 * 6 - 30px);
+          display: block;
+          .grid-icon {
+            flex-basis: 100%;
+          }
+          .grid-details {
+            flex-basis: 100%;
+            .section-bottom-line {
+              margin-left: auto;
+            }
+          }
+        }
+
+        @include resp-max($breakpoint-sm) {
+          margin-bottom: 10px;
+          .grid-details {
+            .service-item-title {
+              font-size: 18px;
+            }
+            .service-item-paragraph {
+              font-size: 14px;
+            }
+          }
+        }
+        &:hover {
+          .grid-details {
+            .service-item-title {
+              color: $brand-colour;
+            }
+            .service-item-paragraph {
+              span, b, strong {
+                color: $brand-colour;
+              }
+            }
+          }
+        }
+        &.slick-current.slick-active {
+          .grid-details {
+            .service-item-title {
+              color: $brand-colour;
+            }
+            .service-item-paragraph {
+              span, b, strong {
+                color: $brand-colour;
+              }
+            }
+          }
+        }
+      }
+
+      @include resp-max($breakpoint-md) {
+        margin-bottom: 60px;
+        .slick-dots {
+          position: relative !important;
+          li {
+            button {
+              position: relative;
+              &::before {
+                display: none !important;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                border: 1px solid #8f8f8f;
+                width: 8px !important;
+                height: 8px !important;
+                padding: 0;
+              }
+            }
+
+            &.slick-active {
+              button {
+                &::after {
+                  background-color: $brand-colour;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .explore-serivices-button {
+      display: block;
+      width: 278px;
+      text-align: center;
+      margin: 0 auto;
+      @include resp-max($breakpoint-sm) {
+        width: 220px;
+      }
+    }
+  }
+  &.dark {
+    background: #1b1b1b;
+    padding: 40px 0;
+    .section-header {
+      margin-bottom: 65px;
+    }
+  }
+}

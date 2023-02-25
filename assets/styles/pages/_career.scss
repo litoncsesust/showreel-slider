@@ -1,0 +1,444 @@
+.site-career-container{
+    .career-bnr-section{
+        background-size: cover;
+        .career-bnr-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include resp-max($breakpoint-md) {
+                display: flex;
+                flex-direction: column;
+            }
+            .bnr-text{
+                width: 50%;
+                @include resp-max($breakpoint-md){
+                    width: 100%;
+                }
+                // .career-bnr-title{
+                //     font-family: Karla;
+                //     font-style: normal;
+                //     font-weight: bold;
+                //     font-size: 50px;
+                //     line-height: 65px;     
+                //     padding: 0px 80px 20px 0px;
+                // }
+                .career-bnr-subtitle{
+                    font-family: Karla;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 28px;
+                    line-height: 40px;
+                    @include resp-max ($breakpoint-md){
+                        font-size: .875rem;
+                        line-height: 20px;
+                    }
+                }    
+            }
+            .resume-img{
+
+            }
+        }
+
+        
+    }
+
+    .site-career-top-sections {
+        padding-top: 0 !important;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .career-hero-title-container {
+            .section-title {
+                font-size: 60px;
+                line-height: 70px;
+
+                @include resp-max($breakpoint-md){
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+
+                @include resp-max($breakpoint-sm){
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+            .hero-subtitle {
+                margin: 0 auto;
+                max-width: 800px;
+                margin-bottom: 40px;
+                
+                @include resp-max($breakpoint-md){
+                    font-size: 18px;
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+
+    .career-culture-section {
+        text-align: center;
+        color: black;
+        padding-top: 80px;
+        position: relative;
+        .graphics-container{
+            position: absolute;
+            top: -47px;
+            right: 0px;
+            @include resp-max ($breakpoint-sm){
+                top: -22px;
+                width: 350px;
+            }
+        }
+
+        .culture-header {
+            .section-title {
+                @include resp-max($breakpoint-lg){
+                    font-size: 70px;
+                    line-height: 80px;
+                }
+
+                @include resp-max($breakpoint-md){
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+
+                @include resp-max($breakpoint-sm){
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+            @include resp-max($breakpoint-lg){
+                margin-bottom: 60px;
+            }
+
+            @include resp-max($breakpoint-md){
+                margin-bottom: 40px;
+            }
+
+            @include resp-max($breakpoint-sm){
+                margin-bottom: 20px;
+            }
+        }
+        .culture-sub-header {
+            margin-bottom: 40px;
+            p.section-sub-title {
+                text-align: left;
+                font-size: 18px;
+                @include resp-max($breakpoint-md) {
+                    font-size: 16px;
+                }
+            }
+        }
+        
+
+        .culture-block {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            .culture-benefit-details {
+                width: calc(100% - 450px);
+                margin: 0;
+                padding-right: 40px;
+                text-align: left;
+                p.culture-subtitile {
+                    font-size: 34px;
+                    line-height: 45px;
+                    font-weight: 800;
+                    span {
+                        color: #FA4B00;
+                    }
+                    @include resp-max($breakpoint-md) {
+                        font-size: 24px;
+                        line-height: 32px;
+                    }
+                }
+                p.culture-description {
+                    font-size: 18px;
+                    line-height: 30px;
+                    margin-bottom: 50px;
+                }
+
+                .culture-points {
+                    p.why-join {
+                        font-size: 24px;
+                        line-height: 30px;
+                        font-weight: 700;
+                    }
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        li {
+                            text-align: left;
+                            width: calc(50% - 20px);
+                            margin-bottom: 25px;
+                            span.heading {
+                                position: relative;
+                                top: -4px;
+                            }
+                        }
+                    }
+                }
+
+                @include resp-max($breakpoint-md) {
+                   text-align: center;
+                }
+                
+            }
+            .culture-gallery-wrapper {
+                width: 450px;
+                margin: 0;
+                .culture-gallery {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .culture-gallery-item {
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &:nth-child(1) {
+                            flex-basis: 100%;
+                            margin-bottom: 15px;
+                        }
+                        &:nth-child(2), &:nth-child(3) {
+                            flex-basis: calc(50% - 7px);
+                            height: 250px;
+                        }
+                    }
+                }
+
+                @include resp-max($breakpoint-md) {
+                    margin-top: 30px;
+                }
+            }
+
+            @include resp-max($breakpoint-md){
+                flex-direction: column;
+                .culture-benefit-details, .culture-gallery-wrapper {
+                    width: 100%;
+                }
+            }
+        }
+        .career-culture-group {
+            font-size: 18px;
+            @include resp-max($breakpoint-md){
+                font-size: 16px;
+            }
+            .career-culture-group-block {
+                display: flex;
+                align-items: flex-end;
+                text-align: left;
+                @include resp-max($breakpoint-md){
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .career-culture-group-item:not(:nth-child(3n)){
+                    margin-right: 56px;
+                    @include resp-max($breakpoint-md){
+                        margin-right: 0;
+                    }
+                }
+                .career-culture-group-item {
+                    .career-culture-group-icon {
+                        margin-bottom: 20px;
+                        @include resp-max($breakpoint-md){
+                            text-align: center;
+                        }
+                    }
+                }
+                .career-culture-group-description {
+                    @include resp-max($breakpoint-md){
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .career-culture-group-bottom-description {
+                text-align: left;
+                margin-top: 30px;
+            }
+            .career-culture-gallery-wrapper {
+                margin-top: 80px;
+                .culture-gallery-item{
+                    width: 222px;
+                    margin-right: 20px;
+                    position: relative;
+                    min-height: 300px;
+                    img {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+                .culture-gallery-item.slick-slide.slick-current {
+                    width: 526px !important;
+                    -webkit-transition: all 1s cubic-bezier(0.8, 0, 0.3, 1);
+                    transition: all 1s cubic-bezier(0.8, 0, 0.3, 1);
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+                .slick-prev, .slick-next {
+                    top: -14%;
+                }
+                .slick-prev {
+                    left: 0;
+                }
+                .slick-next {
+                    left: 40px;
+                }
+                .slick-prev.slick-disabled, .slick-next.slick-disabled {
+                    img {
+                        opacity: 0.3;
+                    }
+                }
+                .slick-track {
+                    max-height: 300px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+
+
+
+    .career-positions-section{
+        text-align: center;
+        color: black;
+        padding-top:80px;
+        position: relative;
+        @include resp-max($breakpoint-md){
+            padding: 0px 24px;
+        }
+        .position-header{
+            padding: 60px 0px;
+            .small-career{
+                font-family: Karla;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 12px;
+                text-transform: uppercase;
+                color: #FA4B00;
+            }
+            
+            .position-subtitile{
+                font-family: Karla;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 33px;
+                @include resp-max ($breakpoint-md){
+                    font-size: 18px !important;
+                    line-height: 20px;
+                }
+                span{
+                    color: #FA4B00;
+                }
+            }
+        }
+        .all-job{
+            .job{
+                background: #fff;
+                box-shadow: 0 2px 10px 0px rgba(0,  0, 0, .25);
+                text-align: left;
+                padding: 40px;
+                margin: 30px 0;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                .job-detail {
+                    width: 75%;
+                    .job-title{
+                        font-family: Karla;
+                        font-style: normal;
+                        font-weight: 800;
+                        font-size: 34px !important;
+                        line-height: 45px;
+                        @include resp-max ($breakpoint-md){
+                            font-size: 20px;
+                        }
+    
+                    }
+                    .job-header {
+                        ul {
+                          display: flex;
+                          flex-wrap: wrap;
+                          justify-content: space-between;
+                          list-style: none;
+                          margin: 0;
+                          li {
+                            flex-basis: calc(50% - 20px);
+                            margin-bottom: 20px;
+                            font-size: 18px !important;
+                            span {
+                              display: inline-block;
+                              font-weight: bold;
+                              margin-right: 10px;
+                            }
+                            &:last-child {
+                              margin-bottom: 0;
+                            }
+                            @include resp-max($breakpoint-md) {
+                               font-size: 16px !important;
+                            }
+                          }
+                        }
+                    }
+                    @include resp-max($breakpoint-md) {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+                
+                .btn{
+                    padding: 5px 70px;
+                }
+
+                .action {
+                    width: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    a {
+                        display: block;
+                        width: 90%;
+                        text-align: center;
+                    }
+                    @include resp-max($breakpoint-md) {
+                        width: 250px;
+                    }
+                }
+
+                @include resp-max($breakpoint-md) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .career-future-job-section {
+        color: black;
+        padding-top:80px;
+        padding-bottom:80px;
+        p.future-job-title {
+            font-size: 24px;
+            line-height: 45px;
+            font-weight: 800;
+        }
+        p.future-job-subtitle {
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+}
+
+
+
+

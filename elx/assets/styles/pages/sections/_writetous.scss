@@ -1,0 +1,225 @@
+.site-landing-write-to-us-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #000000;
+  .section-header {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 45px;
+    .sale-bubble {
+      position: absolute;
+      top: 0;
+      right: -230px;
+      width: 300px;
+      height: 171px;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+      }
+
+      .sale-bubble-text-wrap {
+        position: relative;
+        z-index: 15;
+        margin-left: 15px;
+        h3 {
+          margin: 0;
+          color: #fa4b00;
+          font-size: 40px;
+          line-height: 1;
+          font-family: "Karla";
+          font-weight: 900;
+          @include resp-max($breakpoint-md) {
+            font-size: 32px;
+          }
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          font-family: "Karla";
+          font-weight: 700;
+          @include resp-max($breakpoint-md) {
+            font-size: 13px;
+          }
+        }
+      }
+
+      @include resp-max($breakpoint-md) {
+        top: -10px;
+        right: -95px;
+        width: 240px;
+        height: 137px;
+      }
+      @include resp-max($breakpoint-sm) {
+        position: relative;
+        right: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        img {
+          display: none;
+        }
+        .sale-bubble-text-wrap {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .write-to-us-form-container {
+    min-height: 200px;
+    position: relative;
+    max-width: 870px;
+    margin: 0 auto;
+    .write-to-us-form {
+      .row {
+        margin-bottom: 25px;
+        .col {
+          position: relative;
+          @include resp-max($breakpoint-sm) {
+            width: 100%;
+          }
+          &.form-field-error-required {
+            .form-input-field,
+            .form-textarea-field {
+              border: 1px solid #ff0000;
+            }
+            &::after {
+              content: "This field is required*";
+              color: #ff0000;
+              font-size: 12px;
+              line-height: 16px;
+              position: absolute;
+              left: 0;
+              bottom: -15px;
+              padding-left: 25px;
+              @include resp-max($breakpoint-md) {
+                bottom: 10px;
+              }
+            }
+          }
+
+          &.form-field-error-email {
+            .form-input-field,
+            .form-textarea-field {
+              border: 1px solid #ff0000;
+            }
+            &::after {
+              content: "This field required valid email address*";
+              color: #ff0000;
+              font-size: 12px;
+              line-height: 16px;
+              position: absolute;
+              left: 0;
+              bottom: -15px;
+              padding-left: 25px;
+              @include resp-max($breakpoint-md) {
+                bottom: 10px;
+              }
+            }
+          }
+        }
+        .form-input-field {
+          background: #ededed;
+          padding: 25px;
+          color: #000000;
+          @include resp-max($breakpoint-md) {
+            margin-bottom: 25px;
+          }
+        }
+
+        .form-textarea-field {
+          background: #ededed;
+          color: #000000;
+          padding: 25px;
+        }
+        
+
+        .write-to-us-disclaimer {
+          color: #000000;
+          font-style: italic;
+          @include resp-max($breakpoint-md) {
+            margin-top: 30px;
+          }
+          @include resp-max($breakpoint-sm) {
+            margin-top: 20px;
+          }
+        }
+
+        .contact-submit-container {
+          .button-stroked {
+            float: right;
+            padding: 10px 70px;
+            @include resp-max($breakpoint-md) {
+              margin-top: 30px;
+            }
+            @include resp-max($breakpoint-sm) {
+              width: 100%;
+              float: none;
+              margin-top: 20px;
+            }
+          }
+
+          @include resp-max($breakpoint-md) {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        &.text-area-type {
+          .col {
+            &.form-field-error-required {
+              &::after {
+                @include resp-max($breakpoint-md) {
+                  bottom: -15px !important;
+                }
+              }
+            }
+          }
+        }
+        &.recaptcha-type {
+          margin-top: 20px;
+        }
+        @include resp-max($breakpoint-md) {
+          margin-bottom: 0;
+        }
+      }
+
+      &.disabled {
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+    }
+
+    p.write-to-us-submission-message {
+      text-align: center;
+      font-weight: bold;
+      &.form-success {
+        color: green;
+      }
+      &.form-error {
+        color: red;
+      }
+    }
+
+    &.loading::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+  }
+
+  @include resp-max($breakpoint-md) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+}
